@@ -1,7 +1,7 @@
 
 const siteName = 'wiki'
 const description = 'ideas that worth sharing'
-const site = 'https://wiki.lavitalite.tech'
+const site = 'https://wiki.0x3f1opusexpavotelos.tech'
 
 export const metaData = {
   lang: 'zh-CN',

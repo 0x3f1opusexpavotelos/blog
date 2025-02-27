@@ -18,7 +18,7 @@ $ nvim ~/.gitconfig
 # config email/name show match will email/name associated with github account
 ```nvim
 [user]
-	name = lavitalite
+	name = 0x3f1opusexpavotelos
 	email = hack.xiyuan@gmail.com
 ```
 ````
@@ -34,7 +34,7 @@ base dir relative to which files/where these files should be located/looked for
 #### config file location
 - `/etc/gitconfig` system-wide config file
 - `$HOME/.gitconfig` user-specific config file
-- `$GIT_DIR/config`  repo-specific config 
+- `$GIT_DIR/config`  repo-specific config
 
 ```bash
 $ git config --list --show-origin --show-scope
@@ -71,10 +71,10 @@ keep the subject line short(for the sake of git log --oneline output)
 to add further detail under that, and to refer to an issue or bug tracker ticket number if one exists.
 
 ```bash
-[type](scope): (If applied, this commit will ...)[summary](Use the imperative mood)    
+[type](scope): (If applied, this commit will ...)[summary](Use the imperative mood)
 
-Separate subject from body with a blank line  
-Use the body to explain to explain why this change is being made  
+Separate subject from body with a blank line
+Use the body to explain to explain why this change is being made
 ```
 To tell git to use it as default message that appears in your editor when you run `git commit`
 set the `commit.template` configuration value:

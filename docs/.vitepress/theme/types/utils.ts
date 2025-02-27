@@ -1,7 +1,7 @@
 import { useData } from 'vitepress'
 
 import { computed, type ComputedRef } from 'vue'
-import { Permalink } from './types'
+import { type Permalink } from './types'
 
 
 

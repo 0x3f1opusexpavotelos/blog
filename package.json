@@ -1,7 +1,7 @@
 {
     "name": "wiki",
-    "version": "1.0.0-alpha.2",
-    "repository": "git@github.com:lavitalite/wiki.git",
+    "version": "v3.0.0-alpha.1",
+    "repository": "git@github.com:0x3f1opusexpavotelos/wiki.git",
     "license": "MIT",
     "devDependencies": {
         "vite": "catalog:",
@@ -11,7 +11,6 @@
         "typescript": "catalog:",
         "typescript-eslint": "catalog:"
     },
-    "packageManager": "pnpm@9.15.2",
     "simple-git-hooks": {
         "pre-commit": "pnpm lint-staged"
     },
@@ -39,14 +38,13 @@
         "sandbox:nuxt": "pnpm --filter sandbox dev:nuxt",
         "sandbox:web-components": "pnpm --filter sandbox dev:web-components",
         "release": "tsx scripts/release.ts",
+        "docs:serve": "pnpm --filter docs run serve",
         "docs:build": "pnpm --filter docs run build",
         "docs:preview": "pnpm --filter docs run preview"
     },
+    "packageManager": "pnpm@9.15.2",
     "pnpm": {
         "peerDependencyRules": {
-            "allowedVersions": {
-                "vite": "*"
-            },
             "ignoreMissing": [
                 "@algolia/client-search",
                 "postcss",

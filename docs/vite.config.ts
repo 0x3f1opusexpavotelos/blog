@@ -6,7 +6,9 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons'
 
+const alias = await import('./.vitepress/theme/utils/alias').then(r => r.alias)
 
+console.log(alias)
 // import { fileURLToPath } from 'node:url'
 // const __filename = fileURLToPath(import.meta.url)
 // const __dirname = path.dirname(__filename)
@@ -33,11 +35,7 @@ export default defineConfig({
   logLevel: 'info',
   clearScreen: false,
   resolve: {
-    alias: {
-      "@utils": path.resolve(cwd, "./utils"),
-      "@components": path.resolve(cwd, "./.vitepress/theme/components"),
-      "@oss": path.resolve(cwd, "oss"),
-    }
+    alias
   },
   plugins: [
     Components({
@@ -66,6 +64,7 @@ export default defineConfig({
     groupIconVitePlugin({
       customIcon: {
         'docker': 'vscode-icons:file-type-docker2',
+        'bash': 'logos:bash-icon',
         'k8s': localIconLoader(import.meta.url, './icons/kubernetes.svg'),
         'dir': localIconLoader(import.meta.url, './icons/directory-line.svg'),
         'bnf': localIconLoader(import.meta.url, './icons/bnf.svg'),

@@ -4,9 +4,9 @@
 
 ## Usage
 
-Icons inherit the current font color and font size from their parent container element. 
+Icons inherit the current font color and font size from their parent container element.
 
-To change the color of the icon, refer to the [Variants](#variants) section, 
+To change the color of the icon, refer to the [Variants](#variants) section,
 
 and to change the size of the icon refer to the [Sizing](#sizing) section.
 
@@ -148,10 +148,10 @@ Note that any [flipping](#flipping) is applied before the rotation.
 ### Scale
 
 Scale the icon by any positive factor via `scale` prop.
- Note this changes the icon's visual size but not its physical font size. 
+ Note this changes the icon's visual size but not its physical font size.
 
 
- 
+
 
 ### Shifting
 
@@ -169,7 +169,7 @@ while negative value will move the icon to the left.
 
 Both props accept values that are in units of `1/16em` (relative to the icon's current font size).
 
-:::info 
+:::info
 Shifting is applied after  rotation transforms
 
 As with scaling, backgrounds and borders are not affected
@@ -178,9 +178,9 @@ As with scaling, backgrounds and borders are not affected
 
 
 ## Animated icons
-includes/comes with  the following built-in/preset animations 
+includes/comes with  the following built-in/preset animations
 
-- `slide` 
+- `slide`
 - `slide-v`
 - `fade` fade the icon in and out
 - `spin` smoothly spin the icon clockwise
@@ -295,11 +295,11 @@ or create a new animation class in the form of `b-icon-animation-{animationName}
 
 | Component  | Named Export | Import Path      |
 |------------|--------------|------------------|
-| `<v-icon>` | `VIcon`      | `@lavitalite/ui` |
+| `<v-icon>` | `VIcon`      | `@0x3f1opusexpavotelos/ui` |
 
 
 ```vue
-import { VIcon } from '@lavitalite/ui'
+import { VIcon } from '@0x3f1opusexpavotelos/ui'
 Vue.component('v-icon', VIcon)
 ```
 
@@ -308,11 +308,11 @@ Vue.component('v-icon', VIcon)
 
 | Named Export | Import Path      |
 |--------------|------------------|
-| `IconPlugin` | `@lavitalite/ui` |
+| `IconPlugin` | `@0x3f1opusexpavotelos/ui` |
 
 
 
 ```vue
-import { IconPlugin } from '@lavitalite/ui'
+import { IconPlugin } from '@0x3f1opusexpavotelos/ui'
 Vue.use(IconPlugin)
 ```

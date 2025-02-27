@@ -9,7 +9,7 @@ $ git hash-object -w newfile.txt
 $ git write-tree
 $ git commit-tree  [tree-hash] -m "commit message"
 commit-hash
-# register commit object id as new head of the branch 
+# register commit object id as new head of the branch
 $ echo [commit-hash] > .git/heads/main
 ```
 
@@ -23,7 +23,7 @@ repo are just dir with hidden `.git` dir which store the git internal data
 
 `@user:IP`
 
-## init local repo 
+## init local repo
 ```bash
 $ git init <branch-name>
 ```
@@ -35,8 +35,8 @@ $ git init <branch-name>
 ```bash
 $ git remote show origin
 * remote origin
-  Fetch URL: git@github.com:lavitalite/zest-ui.git
-  Push  URL: git@github.com:lavitalite/zest-ui.git
+  Fetch URL: git@github.com:0x3f1opusexpavotelos/zest-ui.git
+  Push  URL: git@github.com:0x3f1opusexpavotelos/zest-ui.git
   HEAD branch: main
   Remote branch:
     main tracked
@@ -48,7 +48,7 @@ $ git remote show origin
 
 
 
-## subrepo 
+## subrepo
 
 ### subtree
 
@@ -86,7 +86,7 @@ $ git submodule update --init --recursive
 
 
 ```bash
-$ git clone <source-repo-url> 
+$ git clone <source-repo-url>
 
 
 $ git submodule update --init
@@ -113,4 +113,4 @@ $ git push -u origin main
 
 
 
-## collaboration 
+## collaboration

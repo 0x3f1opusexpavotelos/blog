@@ -15,7 +15,7 @@ export const themeConfig: DefaultTheme.Config = {
     options: localSearchOptions
   },
   socialLinks: [
-    { icon: "github", link: "https://github.com/lavitalite/wiki" },
+    { icon: "github", link: "https://github.com/0x3f1opusexpavotelos/wiki" },
   ],
   // @ts-ignore
   articleMetaConfig: {
@@ -27,7 +27,7 @@ export const themeConfig: DefaultTheme.Config = {
     licenseLink: 'http://creativecommons.org/licenses/by-sa/4.0/'
   },
   editLink: {
-    pattern: 'https://github.com/lavitalite/wiki/edit/v1-vitepress-rc/docs/:path',
+    pattern: 'https://github.com/0x3f1opusexpavotelos/wiki/edit/vitepress-rc/docs/:path',
     text: '在 GitHub 上编辑此页'
   },
   docFooter: {

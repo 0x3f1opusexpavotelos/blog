@@ -3,14 +3,14 @@
 plan
 require analysis
 system design, UI design  设计稿直出代码
-coding implement new features,resolving bug( linting, reasoning)
+coding implement new features,resolving bug( linting, reasoning), debuging, performance tuneing
 build and test
 e2e/unit test/Integration Testing
 Security & Performance Testing:
 release 离线包发布 CDN发布 platform
-Deployment Step 
+Deployment Step
 integration 接入
-operate document 
+operate document
 monitor
 Feedback Collection
 Monitoring
@@ -21,12 +21,15 @@ Reporting
 
 ## software release life cycle
 
-`pre-alpha`: think up what should have in it, and  how they will do it
-alpha 
 
-- research 
+
+`Private alpha`:
+think up what should have in it, and  how they will do it
+Features are initially launched as a private alpha to gather feedback from the community. To join our early access program, send an email to
+
+- research
   require analysis, target audience what will make the software useful and who will want to use it.
-- planning 
+- planning
   how long it might take to get it done. Create timelines and milestones.
   technology stack, infra and tools preparation
 - design  will look like and how users will interact with it.

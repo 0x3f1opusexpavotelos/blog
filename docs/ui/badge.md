@@ -23,7 +23,7 @@ Badges can be used as part of links or buttons to provide a counter (or similar 
 
 
 
-To change the color of Badge, refer to the [Variants](#variants) section, 
+To change the color of Badge, refer to the [Variants](#variants) section,
 
 and to change the size of Badge, refer to the [Sizing](#sizing) section.
 
@@ -213,7 +213,7 @@ This plugin includes all of the above listed individual components. Plugins also
 
 | Named Export | Import Path      |
 |--------------|------------------|
-| `IconPlugin` | `@lavitalite/ui` |
+| `IconPlugin` | `@0x3f1opusexpavotelos/ui` |
 
 
 ```vue

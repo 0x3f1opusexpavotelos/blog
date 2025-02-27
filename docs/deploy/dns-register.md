@@ -1,14 +1,22 @@
+---
+title: DNS Registration
+date: 2025-01-13
+---
+
+imagine a scavenger hunt(寻宝游戏)where each clue points to another clue, and the final clue points to the treasure
+---
+
+
 ## why dns
 
-DNS can be described as being analogous to a phone book
 
 ::: info  ip addressing
 
 Every device connected to the Internet needs to have an identifier.
 come from finite pools of numbers.
 
-are divided into two parts: 
-`network section`: aka network prefix, identifies the particular network 
+are divided into two parts:
+`network section`: aka network prefix, identifies the particular network
 `host section`: identifies the particular node on the Local Area Network (LAN).
  IP addressing and name system for the resource in internet
 :::
@@ -36,7 +44,7 @@ the Google DNS lookup tool again
 
 ## DNS infra
 
-The primary objective of is to develop open source software and 
+The primary objective of is to develop open source software and
 
 [NLnet Labs](https://nlnetlabs.nl/)  is a nonprofit foundation with the mission to develop open source software and open
 standards for the benefit of the Internet, particularly in the area of DNS and routing
@@ -80,16 +88,16 @@ lease/hold a DNS zone `google.com`
 
 
 behind registrar org whose client you are, is a registry
-client -> registrar -> registry 
+client -> registrar -> registry
 delegate registrar to register to `NS` record to TLD server for the zone you lease
 
 
 delegate authoritative nameserver `ns1.google.com` to host the zone
 
 
- change NS  records of  zone (`google.com`) at my registrar,
+change NS  records of  zone (`google.com`) at my registrar,
 
- how zone changes are made in practice at TLDs 
+ how zone changes are made in practice at TLDs
  between registrars and registries
 
 console/control panel/dashboard
@@ -99,9 +107,9 @@ https://api-sandbox.nic.fr/api-docs/
 
 
 
-`google.com`: root domain(zone apex)
+`google.com`: root domain(also known as bare, naked domain,zone apex)
 
-`google` associated with the organization name,domain is bought 
+`google` associated with the organization name,domain is bought
 
 DOMAIN-SUFFIX(also known as top level domains)`.com`indicate the type of domain, in this case, it is for commercial or business purpose domain.
 
@@ -110,8 +118,8 @@ DOMAIN-SUFFIX(also known as top level domains)`.com`indicate the type of domain,
 
 
 - First Come, First Served
-- prior review list: offense terms associated with racism, Nazism, etc  
-- Domain names (unallocated, reserved for future expansion/reserved) for the Registry 
+- prior review list: offense terms associated with racism, Nazism, etc
+- Domain names (unallocated, reserved for future expansion/reserved) for the Registry
 
 
 
@@ -153,7 +161,7 @@ rss.google.com
 chat.google.com
 cloud.google.com
 developers.google.com
-ns.google.com 
+ns.google.com
 ```
 
 
@@ -161,7 +169,7 @@ ns.google.com
 
 ## DNS lookup/query resolution
 
-Root nameserver 
+Root nameserver
 
 
 ## DNS infrastructure
@@ -184,8 +192,8 @@ gets added to or removed from your authoritative name server
 
 ### DNS proxy
 
-- expose your origin server’s IP address 
-- hide behind  proxy(CDN edge server IP act as reverse proxy)  
+- expose your origin server’s IP address
+- hide behind  proxy(CDN edge server IP act as reverse proxy)
 routes incoming traffic to the nearest data center
 DNS queries for your domain response with CDN edge server IP
 
@@ -204,12 +212,12 @@ With Multicast, one node sends packets that hit multiple (but not all) recipient
 Unicast and Anycast are one-to-one routing schemes. In both, there is one sender and one recipient of the packet
 
 one possible dest
-multiple possible dest, pick the the shortest path from the sender to the recipient. 
+multiple possible dest, pick the the shortest path from the sender to the recipient.
 
 one of the IPs that CloudFlare announces for DNS services is 173.245.58.205. A route to that IP address is announced from all 23 CloudFlare data centers.
 
 sit behind a gateway using NAT,
-router act as gateway use one public IP address 
+router act as gateway use one public IP address
 all the devices that sit behind the network use a unique private IP address
 
 
@@ -238,14 +246,14 @@ www.twitter.com.	419	      CNAME	        twitter.com.
 twitter.com.	   1619     	A     	      104.244.42.1
 ```
 
-`DS` records, 
+`DS` records,
 `TXT`: use for domain verification.
 set this DNS record `google-site-verification`. prove to Google that you own twitter.com
 `glue`
 - authoritative lie outside  the zone
 - authoritative lie inside the zone
  provide both the name and the IP address of the authoritative  name servers that lie inside the zone
-if the authoritative name server for `google.com` is `ns1.google.com`, resolver will try to resolve  resolves `ns1.google.com`. Since ns1 is contained in example.org, this requires resolving example.org first, which presents a circular dependency. 
+if the authoritative name server for `google.com` is `ns1.google.com`, resolver will try to resolve  resolves `ns1.google.com`. Since ns1 is contained in example.org, this requires resolving example.org first, which presents a circular dependency.
 
 <detail>
 <summary>tld server response for `google.com` DNS query</summary>
@@ -265,7 +273,7 @@ instead of origin server IPs
 |----------|-------------|-----------|-------|
 | site.com | A           | 192.0.2.1 | 14400 |
 
-The "@" symbol indicates that this is a record for the root domain, 
+The "@" symbol indicates that this is a record for the root domain,
 
 times out or returns an error if no record is found
 
@@ -275,7 +283,7 @@ times out or returns an error if no record is found
 
 ## DNS resolve/lookup chain/flow
 
-imagine a scavenger hunt(寻宝游戏)where each clue points to another clue, and the final clue points to the treasure
+
 
 If the hostname is found in the `"/etc/hosts"` file
 
@@ -283,12 +291,12 @@ If the hostname is found in the `"/etc/hosts"` file
 
 DNS recursive resolver inside ISP
 
-does not have the A records, but does have the NS records for the authoritative 
+does not have the A records, but does have the NS records for the authoritative
 nameservers, bypassing lookup from the root and TLD nameservers
 
 does not have the NS records,but has the A records for TLD servers
 
-unlikely does not have the record point to the TLD servers, it query the root servers 
+unlikely does not have the record point to the TLD servers, it query the root servers
 ```
 +-------------+          +----------------+
 |             |     1    | DNS Root      |
@@ -320,7 +328,7 @@ unlikely does not have the record point to the TLD servers, it query the root se
 
  provide extra debugging information in DNS response
 filtering-
-DNS-over-TLS and DNS-over-HTTPS 
+DNS-over-TLS and DNS-over-HTTPS
  the scope of a `SERVFAIL` is so board
 
 ### DMS server type
@@ -332,19 +340,19 @@ DNS-over-TLS and DNS-over-HTTPS
 :::
 
 content hosted on several redundant web servers
-round-robin 
-move to the recently responded ip back of the queue, operating on a loop. 
+round-robin
+move to the recently responded ip back of the queue, operating on a loop.
 
 makes a request to Netflix
-, such as the movie thumbnail images, the Netflix logo, 
+, such as the movie thumbnail images, the Netflix logo,
 
 
-fall into one of four categories: 
+fall into one of four categories:
 
 `TLDs`
 
 - Ask the root nameserver about `github.com`
-    
+
 ```bash
 dig @198.41.0.4 +all github.com
 
@@ -389,7 +397,7 @@ ns-421.awsdns-52.com.   172800  IN      A       205.251.193.165
 
 ```bash
 ~  dig @205.251.193.165 +all github.com
- 
+
 id 9992
 opcode QUERY
 rcode NOERROR
@@ -403,7 +411,7 @@ flags QR RD RA
 github.com.             60      IN      A       20.205.243.166
 ```
 
-`authoritative DNS server` 
+`authoritative DNS server`
  RRDNS in Go(cloudfare)
 
 **DNS is pull, not push**
@@ -442,22 +450,22 @@ put `"nameserver 127.0.0.1"` in `/etc/resolv.conf` to force all queries sent fro
 `/etc/network/interfaces`
  `/etc/NetworkManager/NetworkManager.conf`
 
-reach the IP address needed to access a website 
-`recursive resolver`: 
+reach the IP address needed to access a website
+`recursive resolver`:
 
 
-know who to ask: 
-- public resolver: 
+know who to ask:
+- public resolver:
   1.1.1.1(cloudflare), 208.67.220.220,208.67.222.222(openDNS,part of cisco), 8.8.8.8(google)
 - local resolver: [ISC BIND9](https://www.icann.org/en/blogs/details/ten-million-dns-resolvers-on-the-internet-22-3-2012-en) and [NLNet Labs’ unbound](https://www.nlnetlabs.nl/projects/unbound/about/).,powerDNS
- cache that IP address in case they’re asked again. 
+ cache that IP address in case they’re asked again.
 if cache expired, stale, or missing
 negative cache(cache the absence/noexist of that record)
 >browser and OS caching
 
 nonexistent domains to an IP they control that shows you ads or a weird search page that they control.
 
-configure the root zone hint files,to bootstrap the DNS resolution process 
+configure the root zone hint files,to bootstrap the DNS resolution process
 
 [the names and IP addresses of the authoritative name servers for the root zone](https://www.iana.org/domains/root/files)
 
@@ -476,11 +484,11 @@ configure the root zone hint files,to bootstrap the DNS resolution process
 	if(!ah(dp, "K.ROOT-SERVERS.NET.", "193.0.14.129"))	goto failed;
 	if(!ah(dp, "L.ROOT-SERVERS.NET.", "199.7.83.42"))	goto failed;
 	if(!ah(dp, "M.ROOT-SERVERS.NET.", "202.12.27.33"))	goto failed;
-} 
+}
 ```
 
 
-function as: 
+function as:
 
 
 ### setting up local resolver [unbound](https://www.nlnetlabs.nl/projects/unbound/about/) for your local/remote machine(even network)
@@ -493,7 +501,7 @@ logfile: "/etc/unbound/unbound.log"
 pidfile: "/etc/unbound/unbound.pid"
 ```
 
-display info for your remote machine os distro 
+display info for your remote machine os distro
 ```bash
 cat /etc/os-release
 NAME="CentOS Linux"
@@ -521,7 +529,7 @@ change will only take effect on this uptime
 minimal usable configuration” are as follows
 
 <detail>
-<summary> [RFC1918: address location reserved for private network](https://datatracker.ietf.org/doc/html/rfc1918.html)   
+<summary> [RFC1918: address location reserved for private network](https://datatracker.ietf.org/doc/html/rfc1918.html)
 </summary>
 ```
 10.0.0.0 - 10.255.255.255 (10/8)
@@ -554,7 +562,7 @@ move between network namespaces
  routing table implementations—an LC-trie [22] for IPv4
 and a radix trie for IPv6
 etwork namespaces to entirely isolate the WireGuard interface
-and routing table from the physical interfaces and routing tables. 
+and routing table from the physical interfaces and routing tables.
 ```bash
 $ ip link add dev wg0 type wireguard
 $ ip address add dev wg0 10.192.122.3/24
@@ -568,7 +576,7 @@ $ ping 10.10.10.230
 
 配置监听主机`host`
 interface is used to listened incoming traffic  from clients
-the list of IP addresses on that interface 
+the list of IP addresses on that interface
 `interface-automatic`: listen on all address on all(current and future) interfaces
 
 - `localhost`: 限制只能从本机访问,
@@ -590,7 +598,7 @@ DNS=127.0.0.1
 FallbackDNS=1.1.1.1
 #Domains
 DNSSEC=true
-#DNSoverTLS=no 
+#DNSoverTLS=no
 #MulticastDNS=no
 #LLMNR=0
 #Cache=no-negative
@@ -686,19 +694,19 @@ stop sharing your DNS traffic with third parties(ISP)
 
 which don’t know any domains themselves but know who to ask. q
 typically managed by your Internet access provider(ISP)
-cloud provider offer public DNS 
+cloud provider offer public DNS
 Google Public DNS  `8.8.8.8`
 cloudflare public DNS `1.1.1.1`
 
 DNS caching  miss or (OS) level DNS caching  or browser caching miss(chrome://net-internals/#dns)
 
-`root nameserver`:  
+`root nameserver`:
 stores top level domain(.com, .org)
-responds to the resolver with the address of a Top Level Domain (TLD) DNS server 
+responds to the resolver with the address of a Top Level Domain (TLD) DNS server
 
-`authoritative nameserver`: 
+`authoritative nameserver`:
 responds to the resolver with the address of the origin server
- as it is the final source of truth for certain DNS records,satisfy queries from its own record without needing to further query source 
+ as it is the final source of truth for certain DNS records,satisfy queries from its own record without needing to further query source
 
 ````
 
@@ -716,7 +724,7 @@ distribute content closer to website visitors
 go the the farm where the food is grown or local grocery store
 
 load balance
-distribute requests 
+distribute requests
  active health checks
  steering direct traffic to the fastest origin
 server pool for a given user
@@ -730,12 +738,12 @@ ruleset
 
 
 traffic detection: attack or bot
-check on  passenger: no-fly list and tickets dest is matched flight serve 
+check on  passenger: no-fly list and tickets dest is matched flight serve
 check on  Baggage: carrying  disallow items
-Intrusion Detection 
+Intrusion Detection
 
 
-IP Lists 
+IP Lists
 
 ```bash
 
@@ -810,14 +818,14 @@ Stateful inspection:
 Identity awareness
 
 Sandboxing
-Application awareness 
+Application awareness
 
 malware
 
 Ransomware
 Spyware keylogger
-worms self-replicate 
-Trojan Horses encrypt files 
+worms self-replicate
+Trojan Horses encrypt files
 
 
 
@@ -838,7 +846,7 @@ lose control hand over the responsibility to a third party
 
 runtime environment:on-premise, hybrid, or multi-cloud .
 An industry leader in marketing automation
-software 
+software
 
 
 Investigating: Cloudflare is investigating an issue
@@ -847,16 +855,16 @@ fixed
 
 ## DNS security
 
-data transfer 
+data transfer
 encryption
 compression
 
 detection
 mitigation
-Source IP Verification 
+Source IP Verification
 prevention
 
-man-in-the-middle position 
+man-in-the-middle position
 
 
 tamper,
@@ -876,13 +884,13 @@ prevents the source IP from being forged.
 
 DNS tunneling
 DNS hijacking
-DNS spoofing/cache poisoning: 
-DDoS protection, 
- DNS tampering, 
+DNS spoofing/cache poisoning:
+DDoS protection,
+ DNS tampering,
 
 
  subdomain takeover.
- BGP hijacking, 
+ BGP hijacking,
 
 
 
@@ -900,7 +908,7 @@ causing a denial of service for legitimate traffic
 
 
 
-until  time to live (TTL) expires 
+until  time to live (TTL) expires
 
 
 timer
@@ -933,7 +941,7 @@ IP优选策略
 
 ## CDN Cache/Proxy
 
-the CDN fetches that content from an origin server, 
+the CDN fetches that content from an origin server,
 and then saves a copy of the content for future requests.
 
 
@@ -959,7 +967,7 @@ actions: how to handle matches for the rule expression
 
 list the  actions supports in rule engine
 ```ts
-type action = 
+type action =
   /** ensuring that the site visitor is human, not automated. */
   "Managed Challenge" |
   "interactive challenge" |
@@ -970,7 +978,7 @@ type action =
   "log" |
   "execute" |
   "rewrite" |
-  "redirect" | 
+  "redirect" |
   /** resolved hostname, and/or resolved destination port of incoming requests. */
   "route" |
   "set cache" |
@@ -983,7 +991,7 @@ storage provider
 datadog
 azure blob
 amazon s3
-google cloud 
+google cloud
 sumo logic
 splunk
 
@@ -1000,10 +1008,10 @@ join multi clause via logic operator
 
 addressing
 
-routing table 
+routing table
 `<networl><subnet><host>`
 
-`cache hit`:  client device makes a request to the cache for content, and the cache has that content saved. 
+`cache hit`:  client device makes a request to the cache for content, and the cache has that content saved.
  A cache miss occurs when the cache does not have the requested content.
 
 
@@ -1015,11 +1023,11 @@ transform functions
 any,all,concat,json_lookup, ends_with
 
 
-A fully populated ruleset object 
+A fully populated ruleset object
 
 endpoints
 
-List and view 
+List and view
 
 Create or upsert:  `create if not exists` or `replace if exists`
 
@@ -1029,7 +1037,7 @@ network layer:
 ddos_l4
 firewall
 
-check on  passenger: no-fly list and tickets dest is matched flight serve 
+check on  passenger: no-fly list and tickets dest is matched flight serve
 check on  Baggage: carrying  disallow items
 
 Stateful inspection:
@@ -1037,14 +1045,14 @@ Stateful inspection:
 
 Application layer
 Request phases
-Response phases 
+Response phases
 http_request_sanitize
 http_request_dynamic_redirect
 http_request_transform
 
 uuidv4(seed)
-```ts 
-export type CacheStatus = 
+```ts
+export type CacheStatus =
   'hit' |
   /**  resource not found in cache and served from origin  */
   'miss'|
@@ -1056,7 +1064,7 @@ export type CacheStatus =
 ```
 
 targeting DNS infrastructure
-DDoS attacks on DNS resolvers 
+DDoS attacks on DNS resolvers
 DDoS attacks at network layer
 
 
@@ -1064,10 +1072,10 @@ phase of the attack lifecycle
 
 mirai scans the Internet for devices that still
 have the factory-default username and password
-settings, 
+settings,
 
 reverse proxy: sits in front of an origin server
- forward proxy:  sits in front of a client 
+ forward proxy:  sits in front of a client
 
 
   real-time traffic data.
@@ -1076,7 +1084,7 @@ reverse proxy: sits in front of an origin server
 ## network security
  access control, cyber attack prevention, malware detection,
 
-## network 
+## network
 
 
 origin server: host web content/ web assets
@@ -1092,9 +1100,9 @@ undersea cables that cross the Atlantic Ocean.
 
 
 ![alt text](/oss/autonomous.png)
-IP address space 
+IP address space
 
-BGP trust-based system. 
+BGP trust-based system.
 BGP hjacking: announcing a IP that wasn't actually behind them.
 upstream providers or peers
 how a Pakistani ISP shut down YouTube with blackhole routing
@@ -1111,7 +1119,7 @@ fintech
 Cloud Giants
  Surveys of IT and security leaders
  remote or  hybrid  workforce
- multitenancys 
+ multitenancys
 
 
  employee, former employee, contractor, consultant, board member, or vendor.
@@ -1137,7 +1145,7 @@ grant permissions  to operation on resources
 
  cross-site scripting
   collect identity credentials,geolocation,webcam data
-persistent 
+persistent
  post content that other users will see, such as comments forum or social media site
 
  input sanitization and output escaping
@@ -1150,13 +1158,13 @@ drive drops.
   The Associated Press Twitter account being compromised, and the attackers tweeted out a fake news story about an explosion in the White House
 
 
-  Advanced-fee scam 
+  Advanced-fee scam
  Nigerian prince or wealthy Spanish prisoner,
  Account deactivation scam
  Website forgery scam
  clone phishing
 
-   email security 
+   email security
 
 
 
@@ -1166,7 +1174,7 @@ drive drops.
 
 
 
-  
+
 ## review active sessions
 
 IP address, location, device type, browser type, and last active login.
@@ -1174,9 +1182,9 @@ IP address, location, device type, browser type, and last active login.
 the session timeout for the Cloudflare dashboard ↗ is 72 hours without any activity.
 
 
-## Review audit logs 
+## Review audit logs
 
-storage services, SIEMs, and log management providers 
+storage services, SIEMs, and log management providers
 
 ## Endpoints
 
@@ -1187,12 +1195,12 @@ logpush logpull
 
 ```ts
 export interface ILogPush {
-  dataset: 'firewall_events' | 'nel_reports' | 'dns_logs' |  'http_requests' | 'page_shield_events' | 
+  dataset: 'firewall_events' | 'nel_reports' | 'dns_logs' |  'http_requests' | 'page_shield_events' |
   "Workers Trace Events"
 }
 ```
 
-Account-scoped datasets use /accounts/{account_id} and Zone-scoped datasets use /zone/{zone_id}. 
+Account-scoped datasets use /accounts/{account_id} and Zone-scoped datasets use /zone/{zone_id}.
 
 `{DATASET}` argument indicates the log category \
 `http_requests`, spectrum_events, `firewall_events`, `nel_reports`, or `dns_logs`.
@@ -1203,15 +1211,15 @@ Account-scoped datasets use /accounts/{account_id} and Zone-scoped datasets use 
 "action_parameters": {
   "request_fields": [
     { "name": "<http_request_
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     er_name_1_in_lower_case>" },
     { "name": "<http_request_header_name_2_in_lower_case>" },
     // ...
@@ -1263,19 +1271,19 @@ export interface DNSLog {
   ednsSubnet: string;
 
   queryType: DNSQueryType;
-  
+
   /** Indicates if the response was served from cache */
   responseCached: boolean;
-  
+
   /** DNS response code (e.g., 0 for NOERROR, 3 for NXDOMAIN) */
   responseCode: DNSResponseCode;
-  
+
   /** Client's IPv4 or IPv6 address */
   sourceIp: string;
-  
+
   /** When the DNS query occurred */
   timestamp: Date;
-  
+
   /** When this record was created in the database */
   createdAt: Date;
 }
@@ -1289,7 +1297,7 @@ export interface DNSLog {
 export interface FirewallEvent {
   action: 'allow' | 'block' | 'challenge'
   ClientASN: number
-  ClientCountry  
+  ClientCountry
   /** classify IPs as  */
   ClientIPClass: 'searchEngine' | 'allowList' | 'monitoringService' | 'scan' | 'tor'
 }
@@ -1319,9 +1327,11 @@ clients:
 register root domain(zone apex) tld nameserver
 
 
+
+
 - lease a domain from registrar(domain provider) if you do not already own a domain
 
-- registered your domain name through a reseller 
+- registered your domain name through a reseller
 
 <detail>
 <summary>
@@ -1332,22 +1342,22 @@ register root domain(zone apex) tld nameserver
 
 <detail>
 <summary>why have to disable DNSSEC: signing and validation</summary>
-when DNSSEC enabled, added DNS records 
-are  
+when DNSSEC enabled, added DNS records
+are
 supports DNSSEC: trace upward auth chain
 
 
 
 
 a digit signature signed by your DNS provider
-are attached to the DNS record(s) that the server sends to the client 
+are attached to the DNS record(s) that the server sends to the client
 
 
 verifies DNS query responses you receive are unaltered
 verify the source of the answers that it receives
 
-This action prevents issuing new DNS records on your behalf 
-redirect traffic intended for your domain 
+This action prevents issuing new DNS records on your behalf
+redirect traffic intended for your domain
 
 offer a comprehensive series of hands-on guides about the implementation of DNSSEC in Infoblox, PowerDNS, BIND and Unbound.
 
@@ -1359,17 +1369,17 @@ DNSSEC signing on authoritative servers:
 
 DNSSEC validation on caching resolvers
 
-DNSSEC-validating resolvers: 
+DNSSEC-validating resolvers:
 Bind,
 Dnsmasq,
 Knot Resolver,
-PowerDNS Recursor, 
-systemd-resolved and Unbound. 
+PowerDNS Recursor,
+systemd-resolved and Unbound.
 
 
 </detail>
 
-domain contact info privacy(being displayed in the Whois record.) 
+domain contact info privacy(being displayed in the Whois record.)
 
 DNS records  DNS 记录
 Nameservers  名称服务器
@@ -1399,10 +1409,10 @@ public record maintained by domain registrars that contains details about the ow
 
 ## DNS setup
 
-connect with cloudflare 
+connect with cloudflare
 manage DNS records through the Cloudflare dashboard or API.
 
-setup (full), you add your domain, import your DNS records, and update your authoritative nameservers 
+setup (full), you add your domain, import your DNS records, and update your authoritative nameservers
 
 
 
@@ -1520,9 +1530,9 @@ URIRecord = { comment, content, data, 7 more... }
 
 
 ## the awareness of e-mail security protocols,
- 
+
  offer a comprehensive series of hands-on guides about the implementation of SPF/DKIM/DMARC and DANE in the Postfix and Exim mail server software. In addition, .nl registrars have access to a free e-learning module about e-mail security standards.
 
 
 
- 
+

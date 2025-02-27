@@ -4,7 +4,7 @@ task runner
 schedule
 ```yml
 # run every day
-on: 
+on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
@@ -35,7 +35,7 @@ variables
 workflow scope level
 ```yml
 env:
-  - user-name: lavitalite
+  - user-name: 0x3f1opusexpavotelos
 
 jobs:
   steps:

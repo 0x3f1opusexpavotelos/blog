@@ -1,5 +1,5 @@
 Includes code coverage
-coverage reporting 
+coverage reporting
 Provides type safety for all client operations
 Clean separation of concerns
 
@@ -21,7 +21,7 @@ supplies all the required functionality.
 endpoint routing, rate limiting,
 
 
-sequences,dependencies  of calls   
+sequences,dependencies  of calls
 
 
 rateLimit: {
@@ -44,7 +44,7 @@ Magic Quadrant
 
 the landscape of all the tools and products.
 fit-for-purpose tools
-dedicated to generating developer portals and documentation. 
+dedicated to generating developer portals and documentation.
 
 products tailored to the specific problem you’re currently trying to solve
 
@@ -61,3 +61,11 @@ open source products alternatives
 solutions, architectural patterns, or trends that come with tradeoff
 
 most up-to-date
+
+
+workflow
+code-execution flow
+operation flow
+
+
+overwhelming or distracting

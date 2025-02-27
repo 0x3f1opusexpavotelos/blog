@@ -1,4 +1,12 @@
-KVM virtualization technology 
+---
+title: vps
+date: 2025-01-13
+---
+
+entering bgp
+---
+
+KVM virtualization technology
 
 
 billing
@@ -19,7 +27,7 @@ status: `online | offline`
 
 POST /api/v1/servers/{server}/shutdown
 
-POST /api/v1/servers/{server}/boot 
+POST /api/v1/servers/{server}/boot
 
 POST /api/v1/servers/{server}/reboot
 POST /api/v1/servers/{server}/cancel
@@ -79,7 +87,7 @@ data": {
 
 
 ## cloud computing provider
- compute-storage separation architecture 
+ compute-storage separation architecture
 
 ## cloud storage provider
 
@@ -97,7 +105,7 @@ amazon vps
 GCP
 
 
-## 
+##
 API/CLI/UI
 
 

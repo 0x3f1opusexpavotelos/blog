@@ -8,13 +8,13 @@
 
 ### compare diff
 
-compare file 
+compare file
 compare snapshot of repo
 `man git-diff` for more ref
 
 ```bash
 # compare change between working tree to index (staging area for the next commit).
-$ git diff 
+$ git diff
 # compare latest two commit
 $ git diff head head^
 $ git diff HEAD:Makefile HEAD^1:Makefile
@@ -52,17 +52,18 @@ $ git diff-tree
 
 
 ```bash
-$ git log --after="2024-1-1" --before="2025-1-1" 
+$ git log --after="2024-1-1" --before="2025-1-1"
 $ git log --grep="feat: "
 $ git log --author="ransom"
 $ git log -- README.md
-
+$ git log --word-diff
+$ git log -S
 ```
 
 
 
 **By author:**
-It groups each commit by author and displays the first line of each commit message. 
+It groups each commit by author and displays the first line of each commit message.
 ```bash
 $git shortlog
 ```
@@ -98,9 +99,9 @@ $ git log main..feature
 ### diffs
 
 - to see actual change introduced by each commit
-  
+
 ```bash
-$ git log -p 
+$ git log -p
 ```
 - to see the brief summary introduced by each commit
 ```bash
@@ -108,7 +109,7 @@ $ git log --stat
 #number of insertions and deletions to each file altered
 67 insertion(+), 38 deletions(-)
 ```
-  
+
 
 ```bash
 $ alias gitlog=git log --graph --oneline --all
@@ -116,10 +117,10 @@ $ alias gitlog=git log --graph --oneline --all
 # show default branch if not specified
 $ git log <remote-or-local-branch>
 # start/stop log at another ref
-$ git log <ref> 
+$ git log <ref>
 # show commits that touch this file
-$ git log <path/to/file> 
-# combine the above both 
-$ git log <ref> -- <path/to/file> 
+$ git log <path/to/file>
+# combine the above both
+$ git log <ref> -- <path/to/file>
 $ git log --stat
 ```

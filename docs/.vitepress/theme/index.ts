@@ -11,21 +11,21 @@ import './styles/custom.css'
 import './styles/component-vars.css'
 import './styles/overwrite.css'
 import './styles/home.css'
+import './styles/fonts.css'
 import 'virtual:group-icons.css'
 
 
-import NavLinks from './components/NavLinks.vue'
+
 import { VIcon } from './components/VIcon'
 import { VChip } from './components/VChip'
 import Announcement from './components/Announcement.vue'
 import HomeUnderline from './components/home/HomeUnderline.vue'
 import HomeFooter from './components/home/HomeFooter.vue'
 import { data as FooterData } from './data/footer'
+import EmbedXPost from './components/EmbedXPost.vue'
 
-// import 'virtual:group-icons.css'
-if (typeof window !== 'undefined') {
-  initSvgSymbols()
-}
+
+
 
 
 
@@ -48,11 +48,17 @@ export default {
       'layout-bottom': () => h(HomeFooter, { data: FooterData })
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    app.component('NavLinks', NavLinks)
+  async enhanceApp({ app, router, siteData }) {
+    if (!import.meta.env.SSR) {
+      // const plugin = await import('plugin-that-access-window-on-import')
+      // app.use(plugin.default)
+      initSvgSymbols()
+    }
+
     app.component('VIcon', VIcon)
     app.component('VChip', VChip)
     app.component('HomeUnderline', HomeUnderline)
+    app.component('EmbedXPost', EmbedXPost)
   }
 } satisfies Theme
 

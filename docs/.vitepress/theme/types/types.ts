@@ -58,3 +58,49 @@ export interface FooterData {
     link: string;
   }
 }
+
+
+/* type.ts */
+export interface INavLink {
+
+  icon?: string | { symbolId: string };
+  badge?:
+  | string
+  | {
+    text: string
+    type: 'info' | 'tip' | 'warning' | 'danger'
+  }
+  title: string
+  desc?: string
+  link: string
+}
+
+export interface NavData {
+  title: string
+  items: INavLink[]
+}
+
+/**
+ * Site Nav
+ */
+export interface SiteNavItem {
+  /** 站点图标 */
+  icon?: string
+  badge?:
+  | string
+  | {
+    text?: string
+    type?: 'info' | 'tip' | 'warning' | 'danger'
+  }
+  /** 站点名称 */
+  title: string
+  /** 站点名称 */
+  desc?: string
+  /** 站点链接 */
+  link: string
+}
+
+export interface SiteNavSection {
+  title: string
+  items: SiteNavItem[]
+}

@@ -1,0 +1,122 @@
+/*
+Loading variable fonts when self-hosting
+Loading variable fonts from a font delivery service
+*/
+/* webfont-marker-begin */
+/* @import "https://www.nerdfonts.com/assets/css/webfont.css"  */
+/* webfont-marker-end */
+
+
+
+/* @see https://drafts.csswg.org/css-values-4/#urls */
+
+/* @import url - specify the url as a <string> and as a url() function wrapper */
+/* Resource Locators `<url> type*/
+/* <url> = <url()> | <src()>
+<url()> = url( <string> <url-modifier>* ) | <url-token>
+<src()> = src( <string> <url-modifier>* ) */
+/*  url() can only express its value literally */
+/*   provide a URL by functions such as var(), use the src() notation */
+/*  Legacy syntax: CSS contexts (such as @import) also allow a <url> to be represented by a bare <string>, without the function wrapper. */
+/* Relative URLs: url function wrapper resolve relative url to absolute url (base URL is the css referencer file)*/
+/* Fragment URLs:  element ID reference rosolve to document/node-tree live shadow-dom involved in tree-scoped reference  */
+/* Empty URLs: resolve to an invalid resource, d avoids excess traffic re-requesting the stylesheet or host document due to editing mistakes leaving the url() value empty, */
+/*  URL Modifiers: not yet define, reserved for future*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@layer theme, base, components, utilities;
+
+@theme {
+    :root, :host {
+        --font-roboto: "Roboto", sans-serif;
+    }
+}
+
+
+@layer theme {
+    :root, :host {
+        --font-sans: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+        monospace;
+        --c-avocado-100: oklch(0.99 0 0);
+        --c-avocado-200: oklch(0.98 0.04 113.22);
+        --c-avocado-300: oklch(0.94 0.11 115.03);
+        --c-avocado-400: oklch(0.92 0.19 114.08);
+        --c-avocado-500: oklch(0.84 0.18 117.33);
+        --c-avocado-600: oklch(0.53 0.12 118.34);
+    }
+
+}
+@layer base {
+    *, ::after, ::before, ::backdrop, ::file-selector-button {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0 solid;
+    }
+    html, :host {
+        html, :host {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            tab-size: 4;
+            font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' );
+            font-feature-settings: var(--default-font-feature-settings, normal);
+            font-variation-settings: var(--default-font-variation-settings, normal);
+            -webkit-tap-highlight-color: transparent;
+          }
+    }
+}
+
+@supports (font-variation-settings: normal) {
+    @font-face {
+        font-family: 'Nerd Font';
+        src: url("../fonts/NerdFont.woff2") format("woff2");
+        font-weight: 200 700;
+        font-style: normal;
+        font-display: swap;
+        unicode-range: U+ec19,U+ea97,U+f00e6,U+e7ee
+    }
+}
+
+ /* use statci font */
+@supports not (font-variation-settings: normal) {
+    @font-face {
+        font-family: Roboto;
+        src: url('Roboto-Regular.woff2');
+        font-weight: normal;
+    }
+}
+
+
+.nf,
+.nerd-font,
+.nerd-fonts {
+    font-family: 'Nerd Font';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* <i class="nf nf-cod-acount"></i> */
+
+
+
+.nf-cod-account:before {
+    content: "\eb99"
+}
+
+.nf-cod-chip:before {
+    content: "\ec19"
+}
+
+.nf-md-bullhorn:before{
+    content: '\f00e6'
+}
+.nf-dev-godot:before {
+    content: '\e7ee'
+}

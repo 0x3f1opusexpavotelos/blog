@@ -5,7 +5,9 @@ import footnote from 'markdown-it-footnote';
 export const markdown: MarkdownOptions = {
   config: (md) => {
     md.use(footnote)
-    md.use(groupIconMdPlugin)
+    md.use(groupIconMdPlugin,{
+      titleBar: { includeSnippet: true },
+    })
 
     md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
       let htmlResult = slf.renderToken(tokens, idx, options);

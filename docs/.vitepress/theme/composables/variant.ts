@@ -1,7 +1,7 @@
 
 
 
-import { MaybeRef, type PropType, computed, getCurrentInstance, unref } from 'vue'
+import { type MaybeRef, type PropType, computed, getCurrentInstance, unref } from 'vue'
 import { useColor } from './color'
 
 

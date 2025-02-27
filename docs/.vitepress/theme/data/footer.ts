@@ -9,8 +9,8 @@ export const data: FooterData = {
     mps: '粤公网安备44200102445449号',
   },
   author: {
-    name: 'lavitalite',
-    link: 'https://github.com/lavitalite'
+    name: '0x3f1opusexpavotelos',
+    link: 'https://github.com/0x3f1opusexpavotelos'
   },
   groups: [
     {

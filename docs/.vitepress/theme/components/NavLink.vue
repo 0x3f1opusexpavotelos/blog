@@ -58,20 +58,36 @@ const isExternalIcon = (icon?: string | { symbolId: string }): icon is string =>
   --nav-icon-box-size: 50px;
   --nav-icon-size: 45px;
   --nav-box-gap: 12px;
+  --color-gray-dark: 55 65 81;
+  --color-gray-light: 209 213 219;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
   display: block;
   height: 100%;
   border: 1px solid var(--vp-c-bg-soft);
-  background-color: var(--vp-c-bg-soft);
+  /* background-color: var(--vp-c-bg-soft); */
   border-radius: 12px;
-  transition: all 0.25s;
+  box-shadow: inset 0 1px 0 0 hsla(0, 0%, 100%, .1);
+  transition-property: color, background-color, border-color, text-decoration-color, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: .15s;
+  transition-timing-function: var(--ease-in);
+  background-color:rgb(var(--color-gray-light) / .2);
+  :is(.dark) & {
+  background-color: rgb(var(--color-gray-dark) / .6);
+  }
 }
 
 .nav-link:hover {
-  border-color: var(--vp-c-brand);
-  box-shadow: var(--vp-shadow-2);
-  text-decoration: initial;
-  background-color: var(--vp-c-bg-soft-up);
-  transform: translateY(-5px);
+  /* border-color: var(--vp-c-brand); */
+  /* box-shadow: var(--vp-shadow-2); */
+  /* text-decoration: initial; */
+  /* background-color: var(--vp-c-bg-soft-up); */
+  /* transform: translateY(-5px); */
+
+
+  background-color:rgb(var(--color-gry-light) / .4);
+  :is(.dark) & {
+  background-color: rgb(var(--color-gray-dark) / .4);
+  }
 }
 
 .nav-link .box {

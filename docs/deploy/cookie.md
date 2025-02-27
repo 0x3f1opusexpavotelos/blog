@@ -1,3 +1,7 @@
+---
+date: 2025-01-13
+---
+
 There are three types of web cookies:
 
 
@@ -50,7 +54,7 @@ bm_sv
 Used in context with the website's BotManager. The BotManager detects, categorizes and compiles reports on potential bots trying to access the website.
 
 
-inspects,stores, transfer  data, 
+inspects,stores, transfer  data,
 
 
 
@@ -62,9 +66,9 @@ client key exchange
 session keys.
 
 
-TLS handshake occur when 
+TLS handshake occur when
 
- concept from edge server or caching server. 
+ concept from edge server or caching server.
 
   long-distance latency
 
@@ -93,7 +97,7 @@ Packet headers are (from)attached by  networking protocols.
 compromise or overwhelm systems.
 
 
-ddos attacks at network layers 
+ddos attacks at network layers
 
 phishing
 tricking the victim into revealing password
@@ -142,14 +146,14 @@ third-party cookies.
 
 First-party cookies: Created by the site you visit
 
-Cookie Notice website banner 
-Cookie Compliance Consent Management Platform 
+Cookie Notice website banner
+Cookie Compliance Consent Management Platform
 
-Google Consent Mode 
+Google Consent Mode
 
 Facebook Consent Mode
 
-track website activities 
+track website activities
 Google Consent Mode
 
 
@@ -162,18 +166,18 @@ automated execute repetitive tasks
 
 gated content
 
-email address, phone number, and medical records 
+email address, phone number, and medical records
  can be used to identify the person
 privacy legislation as personal info and personal data
 
 
-### type of bot 
+### type of bot
 Bots can be fall into
 Chatbots: Bots that simulate human conversation by responding to certain phrases with programmed responses
 Web crawlers (Googlebots)
 Social bots: Bots that operate on social media platforms
 Malicious bots: Bots that scrape content, spread spam content, or carry out credential stuffing attacks
-search engine bots 
+search engine bots
 customer service bots
 
 
@@ -200,7 +204,7 @@ Name
 Provider
 Meta
 Expiration
- 
+
 Purpose
 Used by Facebook to deliver a series of advertisement products such as real time bidding from third party advertisers
 ```
@@ -222,6 +226,6 @@ Name
 Provider
 Hubspot Inc
 Expiration
- 
+
 Purpose
 The main cookie for tracking visitors. It contains the domain, utk, initial timestamp (first visit), last timestamp (last visit), current timestamp (this visit),

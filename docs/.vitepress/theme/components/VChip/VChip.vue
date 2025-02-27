@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { useVariant, VariantProps } from "../../composables/variant";
+import { useVariant, type VariantProps } from "../../composables/variant";
 import { VIcon } from "../VIcon";
 
 type VChipProps = VariantProps & {

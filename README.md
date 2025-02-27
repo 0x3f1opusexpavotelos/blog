@@ -1,16 +1,15 @@
 
-# Wiki [![starline](https://starlines.qoo.monster/assets/lavitalite/wiki)](https://github.com/qoomon/starline)
+# Wiki [![starline](https://starlines.qoo.monster/assets/0x3f1opusexpavotelos/wiki)](https://github.com/qoomon/starline)
 <p align="center">
-<img src="docs/public/logo.svg"  height="173" alt="wiki logo" />
+<img src="docs/public/logo.svg"  height="173" alt="logo" />
 </p>
-
 
 
 <h1 align="center"> Wiki </h1>
 
 
 <h4 align="center">
-    knowledge management, knowledge base and more ...
+    studo and more ...
 </h4>
 
 <p align="center">
@@ -21,8 +20,8 @@
 
 <br>
 <p align="center">
-<a href="https://github.com/xiyuan404/wiki/">Homepage</a> |
-<a href="https://github.com/xiyuan404/wiki/roadmap">Roadmap</a> 
+<a href="blog.0x3f1opusexpavotelos.tech">Homepage</a> |
+<a href="blog.0x3f1opusexpavotelos.tech/roadmap">Roadmap</a>
 </p>
 <br>
 
@@ -44,30 +43,84 @@
 
 ## ✨ Features
 
-
-- **[Mono repo]** - 
-- **[Multi-Framework]** - vue, react
-- ⚡️ **[Fast][Vite]** - instant reloading powered by [Vite]
-
-
-
-
-
-## Changelog
+This is a non-exhaustive, evolving list of features that  provides for this project.
+- **Mono repo** - turborepo
+- **SSR** - vue, nuxt
+- ⚡️ **theme** -
+- ⚡️ **full fledge icon registartion** - self-hosting font as icon(nerdfont), directroy scan(vite-plugin-svg-icons), code block icon(vitepree-group-icons)
+## Tech Stack
 
 
-| Version | Supported          | Status  | Desc                    |
-|---------|:-------------------|---------|-------------------------|
-| 0.2     | :white_check_mark: | wip     | In consider using  iles |
-| 0.1     | :x:                | active  |                         |
-| < 0.1   | :x:                | archive |                         |
+
+  <!-- TEMPLATE FOR NEW ROW -->
+  <!-- START ROW
+
+
+  <tr>
+    <td></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer"></a></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer"></a></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer"></a></td>
+  </tr>
+END ROW -->
+<!-- notranslate -->
+<!-- /notranslate -->
+
+<!-- TEMPLATE FOR SUB HEADER -->
+
+<!-- START HEADER
+    <th colspan="4"> Current </th>
+END HEDAER -->
+
+<table style="table-layout:fixed; white-space: nowrap;">
+  <tr>
+    <th>Version</th>
+    <th>Status</th>
+    <th >Branch</th>
+    <th colspan="3">Tech Stack</th>
+  </tr>
+  <!-- notranslate -->
+  <tr>
+    <th> <1.0.0 </th>
+    <th>prelease</th>
+    <th>v0-mkdocs</th>
+    <th>mkdocs</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <!-- /notranslate -->
+  <th colspan="6" style="text-align: center"> Current, stable</th>
+  <!-- notranslate -->
+  <tr>
+    <td>^1.0.0</td>
+    <td> active </td>
+    <td> v1-vitepress | vitepres-rc</td>
+    <td> shared UI component</td>
+    <td> vitepress</td>
+    <td> </td>
+  </tr>
+  <!-- /notranslate -->
+
+  <th colspan="6" style="text-align: center">⚡️ Next, breaking change</th>
+  <!-- notranslate -->
+    <tr>
+    <td>^2.0.0</td>
+    <td> wip </td>
+    <td> vitepress-theme-alpha.1</td>
+    <td> UI component bundle to theme</td>
+    <td> add support to nuxt UI component or iles </td>
+    <td> mdx maybe </td>
+  </tr>
+  <!-- /notranslate -->
+</table>
+
 
 > [!NOTE]
 > You are viewing the **v1-vitepress branch**,
-> 
+>
 > For better CMS experience, This blog has mirgarted to vitepress powered SSG
-> 
-> legacy code can be found at  [v0-mkdocs branch](https://github.com/xiyuan404/tech_insight/tree/v0-mkdocs). 
+>
+> legacy code can be found at  [v0-mkdocs branch](https://github.com/0x3f1opusexpavotelos/wiki/tree/v0-mkdocs).
 
 
 ## conventional commit
@@ -99,7 +152,7 @@ For a full list of open source projects and licenses used in this project, pleas
 
 ## Contributors
 
-[![contributors](https://contrib.rocks/image?repo=lavitalite/wiki)](https://github.com/lavitalite/wiki/graphs/contributors)
+[![contributors](https://contrib.rocks/image?repo=0x3f1opusexpavotelos/wiki)](https://github.com/0x3f1opusexpavotelos/wiki/graphs/contributors)
 
 
 

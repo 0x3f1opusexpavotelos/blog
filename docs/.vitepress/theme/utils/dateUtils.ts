@@ -115,11 +115,16 @@ const getOrdinalSuffix = (number: number): string => {
   return number + suffix;
 }
 
-const padNumber = (value: number, length: number = 2): string => {
-  return String(value).padStart(length, '0');
-}
+const padZero = (n: number, len: number = 2) => n.toString().padStart(len, '0')
+export const dateToTimeString = (date: Date): string =>
+  [padZero(date.getHours()), padZero(date.getMinutes())].join(':')
+
+export const dateToDateString = (date: Date, separator = '/'): string =>
+  [date.getFullYear(), date.getMonth() + 1, date.getDate()].join(separator)
 
 
+export const dateToDateTimeString = (date: Date, separator = '/'): string =>
+  `${dateToDateString(date, separator)} ${dateToTimeString(date)}`
 
 const getTokenValue = (date: Date, token: string): string => {
   switch (token) {
@@ -130,11 +135,11 @@ const getTokenValue = (date: Date, token: string): string => {
     // Month
     case 'MMMM': return MONTHS.long[date.getMonth()];
     case 'MMM': return MONTHS.short[date.getMonth()];
-    case 'MM': return padNumber(date.getMonth() + 1);
+    case 'MM': return padZero(date.getMonth() + 1);
     case 'M': return String(date.getMonth() + 1);
 
     // Day
-    case 'DD': return padNumber(date.getDate());
+    case 'DD': return padZero(date.getDate());
     case 'D': return String(date.getDate());
     case 'Do': return getOrdinalSuffix(date.getDate());
 
@@ -144,17 +149,17 @@ const getTokenValue = (date: Date, token: string): string => {
     case 'd': return String(date.getDay());
 
     // Hours
-    case 'HH': return padNumber(date.getHours());
+    case 'HH': return padZero(date.getHours());
     case 'H': return String(date.getHours());
-    case 'hh': return padNumber(date.getHours() % 12 || 12);
+    case 'hh': return padZero(date.getHours() % 12 || 12);
     case 'h': return String(date.getHours() % 12 || 12);
 
     // Minutes
-    case 'mm': return padNumber(date.getMinutes());
+    case 'mm': return padZero(date.getMinutes());
     case 'm': return String(date.getMinutes());
 
     // Seconds
-    case 'ss': return padNumber(date.getSeconds());
+    case 'ss': return padZero(date.getSeconds());
     case 's': return String(date.getSeconds());
 
     // Meridiem

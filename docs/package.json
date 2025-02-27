@@ -5,13 +5,21 @@
     "engines": {
         "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
     },
+    "author": "0x3f1opusexpavotelos",
+    "bugs": {
+        "url": "https://github.com/0x3f1opusexpavotelos/wiki/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0x3f1opusexpavotelos/wiki.git"
+    },
+    "homepage": "https://github.com/0x3f1opusexpavotelos/wiki#readme",
+    "private": true,
     "scripts": {
+        "debug": "DEBUG=vite:debug-alias,vite:resolve,vite:config,vite:* vitepress dev ",
+        "lint": "eslint --cache .",
+        "format": "prettier --write --cache .",
         "serve": "vitepress dev --host 0.0.0.0",
-        "dev:debug": "DEBUG=vite:debug-alias,vite:resolve,vite:config,vite:* vitepress dev ",
-        "dev:inspect": "node --inspect   node_modules/vitepress dev",
-        "build:react": "FRAMEWORK=react vite build",
-        "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir ./dist/types --project tsconfig.build.json",
-        "build:vue": "FRAMEWORK=vue vite build",
         "build": "vitepress build",
         "preview": "vitepress preview"
     },
@@ -25,7 +33,16 @@
         "markdown-it-footnote": "catalog:",
         "sass": "catalog:",
         "rough-notation": "catalog:",
-        "tinyglobby": "catalog:",
-        "ms": "catalog:"
+        "ms": "catalog:",
+        "deepmerge": "^4.3.1",
+        "lint-staged": "^15.4.3",
+        "simple-git-hooks": "^2.11.1",
+        "prettier": "3.5.1",
+        "gsap": "^3.12.7",
+        "eslint": "^9.20.1"
+    },
+    "dependencies": {
+        "chart.js": "^4.4.7",
+        "vue-chartjs": "^5.3.2"
     }
 }

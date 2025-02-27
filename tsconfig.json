@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    //   at least `ES2020` for dynamic `import()`s and `import.meta` to work correctly.
+    "target": "esnext",
+    "lib": [
+      "DOM"
+    ],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@oss/*": [
+        "./oss/*"
+      ],
+      "~": [
+        "."
+      ],
+      "~/*": [
+        "./*"
+      ],
+      "@docs": [
+        "./docs"
+      ],
+      "@docs/*": [
+        "./docs/*"
+      ],
+    },
+    // ./node_modules/@types/node
+    // "types": ["vite/client"],
+    // "typeRoots": ["node_modules/@types"]
+    // Make `skipLibCheck: true` the default in --init
+    // feat: add skipLibCheck option in the TS template (defaults to true)
+    "skipLibCheck": true,
+    /* AND if you're building for a library: */
+    "declaration": false,
+
+  },
+
+  "include": ["docs/**/*.ts", "docs/**/*.tsx", "docs/**/*.vue", "auto-imports.d.ts", "components.d.ts"],
+  "exclude": [
+    "bin",
+    "scripts",
+    "docs/snippets",
+    "**/dist/**",
+    "**/cache/**",
+    "**/node_modules/**",
+    "**/playground/**",
+    "**/fixtures/**",
+  ],
+  "vueCompilerOptions": {
+    "vitePressExtensions": [
+      ".md"
+    ],
+  },
+}

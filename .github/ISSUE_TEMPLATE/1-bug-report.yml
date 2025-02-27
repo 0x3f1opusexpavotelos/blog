@@ -19,7 +19,7 @@ body:
     id: reproduction
     attributes:
       label: Reproduction
-      description: Steps to reproduce the behavior OR Link to minimal reproduction.
+      description: Exact steps with screenshots to reproduce the behavior OR urls to minimal reproduction.
       placeholder: |
         "1. Navigate to
         2. Click on '....'
@@ -64,9 +64,9 @@ body:
       label: Validations
       description: Before submitting the issue, please make sure you do the following
       options:
-        - label: Check if you're on the [latest VitePress version](https://github.com/lavitalite/wiki/releases/latest).
+        - label: Check if you're on the [latest VitePress version](https://github.com/0x3f1opusexpavotelos/wiki/releases/latest).
           required: true
         - label: Read the docs.
           required: true
-        - label: The issue I am reporting isn't a duplicate (see FAQs, closed issues, and open issues).
+        - label: The issue I am reporting isn't a duplicate [existing Issues](https://github.com/0x3f1opusexpavotelos/0x3f1opusexpavotelos/issues)
           required: true
