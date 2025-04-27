@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import TagList from '../../components/tags/TagList.astro'
+import Main from '../../components/Main.astro'
+import PostList from '../../components/PostList.astro'
+import Layout from '../../layouts/Layout.astro'
+import Heading from '../../components/Heading.astro'
+import Paginator from '../../components/Paginator.astro'
+
+// const tag = Astro.params.tag
+export const prerender = true
+
+export const getStaticPaths = async () => {
+  const posts = await getCollection('posts')
+  console.log(posts)
+  const allTags = posts.flatMap((post) => post.data.tags)
+  const tags = [...new Set(allTags)]
+
+  const paths = tags.map((tag) => {
+    const postByTag = posts.filter((post) => post.data.tags.includes(tag))
+    return {
+      params: { tag },
+      props: {
+        tag,
+        posts: postByTag,
+      },
+    }
+  })
+  return paths
+}
+
+type Props = {
+  tag: string
+  posts: CollectionEntry<'posts'>[]
+}
+
+const { tag, posts: postsByTag } = Astro.props
+
+// const tag = Astro.params.tag
+
+const page = Number(Astro.url.searchParams.get('page')) || 1
+
+/** @todo:  should come from .env file */
+const postsPerPage = Number(import.meta.env.POST_PER_PAGE) || 6
+
+const start = postsPerPage * (page - 1)
+
+const end = start + postsPerPage
+
+const posts = postsByTag.slice(start, end)
+---
+
+<Layout>
+  <Main>
+    <a href="/posts" class="text-gray-900 text-2xl block mb-16 underline"> Back to all posts </a>
+
+    <Heading text="Xiyuan's Blog" />
+    <p class:list={['text-zinc-900 text-2xl', 'mb-24 max-sm:mb-14']}>Welcome to my blog! Here, I share my thoughts and experiences on fullstack, solution architect and developer experience.</p>
+
+    <TagList tags={[tag]} />
+
+    <div class:list={['grid grid-cols-[auto_1fr]', 'gap-x-14 gap-y-3  mb-16 max-lg:grid-cols-1']}>
+      <PostList posts={posts} />
+    </div>
+
+    <Paginator currentPage={page} numOfPosts={postsByTag.length} />
+  </Main>
+</Layout>

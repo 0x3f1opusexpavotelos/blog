@@ -1,59 +1,38 @@
 {
-  "name": "wiki",
-  "version": "1.0.0-alpha.2",
-  "repository": "git@github.com:lavitalite/wiki.git",
-  "license": "MIT",
-  "devDependencies": {
-    "vite": "catalog:",
-    "unplugin-auto-import": "catalog:",
-    "unplugin-vue-components": "catalog:",
-    "tsx": "catalog:",
-    "typescript": "catalog:",
-    "typescript-eslint": "catalog:"
-  },
-  "packageManager": "pnpm@9.15.2",
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "prettier --write --ignore-unknown"
-  },
+  "name": "astro-blog",
   "type": "module",
-  "engines": {
-    "node": "^18.0.0 || ^20.0.0 || >=22.0.0"
-  },
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "serve:storybook": "pnpm --filter wiki serve:storybook",
-    "start:docs:ci": "pnpm --filter docs start:ci",
-    "build": "pnpm --filter wiki build",
-    "build:storybook": "pnpm --filter wiki build:storybook",
-    "docs:build": "pnpm --filter docs build",
-    "build:nuxt": "pnpm --filter @vuestic/nuxt build",
-    "test:unit": "pnpm --filter wiki test:unit",
-    "lint": "pnpm --filter wiki lint",
-    "lint:style": "pnpm --filter wiki lint:style",
-    "serve:docs": "pnpm --filter docs serve",
-    "sandbox:vite": "pnpm --filter sandbox dev:vite",
-    "sandbox:nuxt": "pnpm --filter sandbox dev:nuxt",
-    "sandbox:vue-cli": "pnpm --filter sandbox dev:vue-cli",
-    "sandbox:web-components": "pnpm --filter sandbox dev:web-components",
-    "push": "pnpm --filter vita-ui push",
-    "release": "pnpm --filter deploy release",
-    "deploy": "cd packages/docs && pnpm install && pnpm build:docs"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "vite": "*"
-      },
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "postcss",
-        "search-insights"
-      ]
-    }
+  "dependencies": {
+    "@astrojs/react": "^4.2.5",
+    "@astrojs/vue": "^5.0.11",
+    "@cloudinary/url-gen": "^1.21.0",
+    "@fontsource/cabin": "^5.2.5",
+    "@prisma/client": "^6.6.0",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^5.7.5",
+    "cloudinary": "^2.6.0",
+    "date-fns": "^4.1.0",
+    "drizzle-orm": "^0.43.1",
+    "nodemailer": "^6.10.1",
+    "pg": "^8.15.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.4",
+    "vue": "^3.5.13"
   },
-  "stackblitz": {
-    "startCommand": "pnpm --filter='./packages/docs' run dev"
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@types/pg": "^8.11.14",
+    "dotenv": "^16.5.0",
+    "drizzle-kit": "^0.31.0"
   }
 }
