@@ -1,0 +1,58 @@
+---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css'
+import '@fontsource/cabin'
+
+import { getThumbnail } from '../lib/cloudinary'
+
+export type Props = {
+  headline?: string
+  except?: string
+  cover?: string
+}
+
+const { headline = "Xiyaun's blog", except = 'tech enthusiastic', cover = getThumbnail('share fullstack develop and solution architect experience') } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={except} />
+    <!-- <meta name="theme-color" content="#134e4a" /> -->
+    <link rel="canonical" href={Astro.url} />
+    <title>{headline}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={headline} />
+    <meta property="og:description" content={except} />
+    <meta property="og:image" content={cover} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={headline} />
+    <meta property="twitter:description" content={except} />
+    <meta property="twitter:image" content={cover} />
+  </head>
+  <body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>
+
+<script>
+  // detect browser, add to class for conditional styling
+  const browser = navigator.userAgent.toLowerCase()
+  if (browser.includes('chrome')) document.documentElement.classList.add('browser-chrome')
+  else if (browser.includes('firefox')) document.documentElement.classList.add('browser-firefox')
+  else if (browser.includes('safari')) document.documentElement.classList.add('browser-safari')
+</script>

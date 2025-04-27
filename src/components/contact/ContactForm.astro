@@ -1,0 +1,38 @@
+---
+const types = [
+  { name: 'text', label: 'Text' },
+  { name: 'email', label: 'Email' },
+  { name: 'number', label: 'Number' },
+  { name: 'tel', label: 'Telephone' },
+  { name: 'url', label: 'URL' },
+  { name: 'password', label: 'Password' },
+  { name: 'textarea', label: 'Textarea' },
+]
+---
+
+<form action="">
+  <fieldset class:list={['space-y-4 gap-4', 'grid grid-cols-1 md:grid-cols-2']}>
+    <div>
+      <label class="mb-1">Date</label>
+      <input />
+    </div>
+
+    <div>
+      <label class:list={['mb-1', 'text-gray-700 dark:text-gray']}>Date</label>
+      <select>
+        {
+          types.map((type) => (
+            <option value={type.name} selected={type.name === 'text'}>
+              {type.label}
+            </option>
+          ))
+        }
+      </select>
+    </div>
+
+    <div class="col-span-2">
+      <label class="mb-1">Amount</label>
+      <input type="number" />
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Main from '../../components/Main.astro'
+import Heading from '../../components/Heading.astro'
+import PostList from '../../components/PostList.astro'
+
+import { getCollection } from 'astro:content'
+import Paginator from '../../components/Paginator.astro'
+import TagList from '../../components/tags/TagList.astro'
+
+const page = Number(Astro.url.searchParams.get('page')) || 1
+/** @todo: ssr should come from .env file */
+const postsPerPage = Number(import.meta.env.POSTS_PER_PAGE) || 6
+const start = postsPerPage * (page - 1)
+const end = start + postsPerPage
+
+const allPosts = await getCollection('posts')
+
+const posts = allPosts.slice(start, end)
+
+const allTags = allPosts.flatMap((post) => post.data.tags)
+const filterTags = [...new Set(allTags)]
+---
+
+<Layout>
+  <Main>
+    <Heading text="Xiyuan's Blog" />
+    <p class:list={['text-zinc-900 text-2xl', 'mb-24 max-sm:mb-14']}>Welcome to my blog! Here, I share my thoughts and experiences on fullstack, solution architect and developer experience.</p>
+
+    <TagList tags={filterTags} />
+
+    <div class:list={['grid grid-cols-[auto_1fr]', 'gap-x-14 gap-y-3  mb-16 max-lg:grid-cols-1']}>
+      <PostList posts={posts} />
+    </div>
+
+    <Paginator currentPage={page} numOfPosts={allPosts.length} />
+  </Main>
+</Layout>

@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import Main from '../../components/Main.astro'
+import PostList from '../../components/PostList.astro'
+import Layout from '../../layouts/Layout.astro'
+import { getThumbnail } from '../../lib/cloudinary'
+import TagList from '../../components/tags/TagList.astro'
+import Heading from '../../components/Heading.astro'
+import { Image } from 'astro:assets'
+
+export const getStaticPaths = async () => {
+  const postEntries = await getCollection('posts')
+
+  const paths = postEntries.map((postEntry) => ({
+    params: { slug: postEntry.slug },
+  }))
+  return paths
+}
+
+type Props = {
+  post: CollectionEntry<'posts'>
+}
+
+// const { posts } = Astro.props
+
+const posts = await getCollection('posts')
+
+const { slug } = Astro.params
+
+const post = posts.find((post) => post.slug === slug)
+
+if (!post) return Astro.redirect('/404')
+---
+
+<Layout headline={post.data.title} cover={getThumbnail(post.data.title)}>
+  <Main>
+    <div class="text-zinc-500 text-2xl mb-16">
+      ← <a href="/blog" class="underline">Back to all blogs</a>
+    </div>
+
+    <div class="mb-4">
+      <TagList tags={post.data.tags} />
+    </div>
+
+    <Heading text={post.data.title} />
+
+    <!-- <PostMeta post={post} /> -->
+
+    <Image src={post.data.cover || '/avatar.png'} alt={post.data.title} width={1024} height={1024 / 1.5} format="webp" class="rounded-2xl shadow-xl mb-28 aspect-thumbnail object-cover" />
+    <div class="mb-10">
+      <!-- <TableOfContents headings={headings} /> -->
+    </div>
+    <div class="relative">
+      <!-- <Share post={post} /> -->
+
+      <div class="prose prose-2xl overflow-visible relative">
+        <!-- <Content /> -->
+      </div>
+    </div>
+  </Main>
+
+  <div class="bg-teal-100/30 py-14 px-24 relative border-b border-teal-900 mt-44">
+    <div class="max-w-7xl mx-auto">
+      <div id="comments" class="">
+        <span class="font-bold text-teal-900 text-4xl mr-12">Comments</span>
+
+        <span class="border border-teal-900 text-teal-900 rounded-full px-4 py-2 font-bold text-xl">
+          <!-- {comments.length} -->
+        </span>
+      </div>
+      <div class="mb-14">
+        <!-- <CommentForm /> -->
+      </div>
+      <!-- <CommentList comments={comments} /> -->
+    </div>
+  </div>
+
+  <div class="px-24 py-20 max-w-7xl mx-auto">
+    <p class="font-bold text-teal-900 text-4xl mb-16">Related posts</p>
+    <!-- <PostList posts={relatedPosts} /> -->
+  </div>
+</Layout>

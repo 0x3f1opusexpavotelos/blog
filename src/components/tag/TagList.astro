@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Tag from './Tag.astro'
+
+type Props = {
+  tags: CollectionEntry<'posts'>['data']['tags']
+  title?: string
+}
+
+const { tags, title } = Astro.props
+
+// const parsedTags = tags.split(",").map(tag => tag.trim())
+---
+
+<div class:list={['grid grid-cols-[auto_1fr] max-lg:grid-cols-1', 'gap-x-14 gax-y-3  mb-16']}>
+  {title && <h2 class="font-bold text-5xl text-gray-900">{title}</h2>}
+  <div class="flex gap-4 flex-wrap items-center">
+    {tags.map((tag) => <Tag tag={tag} />)}
+  </div>
+</div>
