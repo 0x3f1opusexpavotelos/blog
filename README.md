@@ -66,7 +66,7 @@ END HEDAER -->
 >
 > For better CMS intergration experience, This blog has mirgarted to astro powered hybrid render solution (server-side pre-rendering, client-side hydration)
 >
-> legacy code can be found at  [with-astro branch](https://github.com/0x3f1opusexpavotelos/wiki/tree/v0-mkdocs).
+> legacy code can be found at  [vitepress-rc branch](https://github.com/0x3f1opusexpavotelos/blog/tree/vitepress-rc).
 
 
 ## ✨ Features Checklist
@@ -433,6 +433,13 @@ END HEDAER -->
 
 
 ## Project Setup
+
+
+```bash
+#  keep only the code from feat/with-astro but still link main histories
+
+git merge --allow-unrelated-histories -s ours origin/main
+```
 
 
 ```bash
