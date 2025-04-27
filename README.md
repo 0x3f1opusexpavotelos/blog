@@ -1,3 +1,437 @@
+
+## Tech Stack
+
+
+
+  <!-- TEMPLATE FOR NEW ROW -->
+  <!-- START ROW
+
+
+  <tr>
+    <td></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer"></a></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer"></a></td>
+    <td><a href="" target="_blank" rel="noopener noreferrer"></a></td>
+  </tr>
+END ROW -->
+<!-- notranslate -->
+<!-- /notranslate -->
+
+<!-- TEMPLATE FOR SUB HEADER -->
+
+<!-- START HEADER
+    <th colspan="4"> Current </th>
+END HEDAER -->
+
+<table style="table-layout:fixed; white-space: nowrap;">
+  <tr>
+    <th>Version</th>
+    <th>Status</th>
+    <th >Branch</th>
+    <th colspan="3">Tech Stack</th>
+  </tr>
+  <!-- notranslate -->
+  <tr>
+    <th> <1.0.0 </th>
+    <th>prelease</th>
+    <th>v0-mkdocs</th>
+    <th>mkdocs</th>
+  </tr>
+  <!-- /notranslate -->
+  <th colspan="6" style="text-align: center"> Current, stable</th>
+  <!-- notranslate -->
+  <tr>
+    <td>^1.0.0</td>
+    <td> active </td>
+    <td> v1-vitepress | vitepres-rc</td>
+    <td> vitepress</td>
+  </tr>
+  <!-- /notranslate -->
+
+  <th colspan="6" style="text-align: center">⚡️ Next, breaking change</th>
+  <!-- notranslate -->
+    <tr>
+    <td>^2.0.0</td>
+    <td> wip </td>
+    <td> with-astro</td>
+    <td> island arch, max and more </td>
+    <td> server pre-render, client-side hydration</td>
+  </tr>
+  <!-- /notranslate -->
+</table>
+
+
+> [!NOTE]
+> You are viewing the **feat/with-astro branch**,
+>
+> For better CMS intergration experience, This blog has mirgarted to astro powered hybrid render solution (server-side pre-rendering, client-side hydration)
+>
+> legacy code can be found at  [with-astro branch](https://github.com/0x3f1opusexpavotelos/wiki/tree/v0-mkdocs).
+
+
+## ✨ Features Checklist
+
+- [x] Homepage
+
+  - [x] Blog post summaries or excerpts
+  - [x] Navigation menu
+
+- [ ] Post Details Page
+
+  - [x] Full blog post content
+  - [x] Author information
+  - [x] Post date and time
+  - [x] Categories
+  - [ ] Tags
+
+- [ ] Post Management
+
+  - [x] Create, edit, delete, and publish posts.
+  - [ ] Draft and schedule posts.
+  - [x] Categories for organizing content.
+  - [ ] Tags for organizing content.
+  - [x] Post previews before publishing.
+
+- [ ] Comments
+
+  - [ ] Enable/disable comments on posts.
+  - [ ] Comment moderation (approve, reject, or delete comments).
+  - [ ] Nested comments or replies.
+  - [ ] User authentication for commenting.
+  - [ ] Spam filtering.
+  - [ ] Highlight top comments, making discussions more engaging.
+
+- [ ] User Management
+
+  - [x] User registration and login.
+  - [x] User roles (admin, user, guest, subscriber).
+  - [x] User profiles and avatars.
+  - [x] User permissions and access control.
+
+- [ ] Search Functionality
+
+  - [x] Search bar for finding posts.
+  - [ ] Filters and sorting options (by date, popularity, etc.).
+
+- [ ] Content Display
+
+  - [x] Responsive design for different devices.
+  - [x] Featured images or media for posts.
+  - [ ] Related posts or recommended reading.
+  - [x] Pagination or infinite scroll.
+  - [ ] Display a list of popular tags to help users discover content.
+
+  ## Profile Management
+
+  - [x] **Profile Editing**  
+         Allow users to update their basic information, including:
+
+    - [x] Display name
+    - [x] Email address (with email verification upon change)
+    - [x] Bio and social links
+
+  - [ ] **Profile Picture Upload**  
+         Enable users to upload or update their profile pictures, ensuring:
+
+    - [x] Default avatars if no picture is uploaded
+
+  - [x] **Public Profile Viewing**  
+      - [x] Allow public access to user profiles through a dedicated username-based route.
+
+  - [ ] **Account Settings**  
+         Provide options for managing account preferences, such as:
+
+    - [ ] Privacy settings to control visibility of profile elements
+
+    - [ ] Linked accounts for social media or external login providers
+
+  - [ ] **Password and Security**  
+         Include options for updating passwords and enhancing account security:
+
+    - [x] Forgot password functionality to reset the password via email or phone verification
+    - [x] Reset password feature allowing users to set a new password after identity verification
+    - [x] hCaptcha protection on the Forgot Password page to prevent automated abuse
+    - [ ] Two-factor authentication setup
+    - [ ] Option to view recent account activity and log out from other sessions
+
+  - [x] **Data Management**  
+         Allow users to manage their data in compliance with privacy standards:
+    - [x] Download account data as a JSON file
+    - [x] Delete account (permanent deletion with confirmation)
+
+## SEO Features
+
+### Core SEO Features
+
+- [x] **Meta Tags**
+
+  - [x] Implement dynamic meta titles for each page/post.
+  - [x] Create unique meta descriptions for each page/post.
+  - [x] Optimize title tags for length and keyword relevance.
+  - [x] Implement meta robots tags to control indexation.
+
+- [x] **Open Graph & Twitter Cards**
+
+  - [x] Ensure Open Graph tags are set for all pages.
+  - [x] Set up Twitter card metadata for sharing.
+  - [x] Customize images for Open Graph and Twitter cards.
+  - [x] Validate Open Graph and Twitter card implementation using debugging tools.
+
+- [x] **Alt Text for Images**
+
+  - [x] Add descriptive `alt` attributes to all images.
+  - [x] Use relevant keywords in alt text without keyword stuffing.
+  - [x] Review and update alt text for existing images.
+
+- [ ] **Structured Data**
+
+  - [ ] Implement schema markup for articles, authors, and any relevant content.
+  - [ ] Use JSON-LD for structured data implementation.
+  - [ ] Test structured data with Google’s Rich Results Test tool.
+  - [ ] Implement schema for breadcrumbs for better navigation.
+
+- [x] **Sitemap and Robots.txt**
+
+  - [x] Create and maintain a `sitemap.xml` file.
+  - [x] Add a `robots.txt` file to control crawling.
+  - [x] Ensure the sitemap includes all important pages and is updated regularly.
+  - [x] Submit the sitemap to Google Search Console.
+
+- [ ] **Canonical Tags**
+
+  - [ ] Implement canonical tags to avoid duplicate content issues.
+  - [ ] Audit canonical tags to ensure they point to the correct URLs.
+  - [ ] Review canonical tag usage in pagination and archives.
+
+### Performance Optimization
+
+- [ ] **Image Optimization**
+
+  - [ ] Use responsive image formats (e.g., WebP).
+  - [ ] Ensure lazy loading is enabled for images.
+  - [ ] Compress images without losing quality.
+  - [ ] Implement image CDNs for faster delivery.
+
+- [x] **Mobile Optimization**
+
+  - [x] Test responsiveness on various devices.
+  - [x] Ensure fast loading times on mobile.
+  - [x] Use mobile-friendly navigation.
+  - [x] Optimize touch targets for mobile users.
+
+- [x] **Caching**
+
+  - [x] Implement browser caching for static resources.
+  - [x] Use a content delivery network (CDN) for faster load times.
+  - [x] Optimize server response time.
+
+### Content Quality
+
+- [x] **Content Freshness**
+
+  - [x] Regularly update old blog posts with new information.
+  - [x] Repurpose existing content into new formats (e.g., video, infographics).
+  - [x] Identify and remove outdated content.
+
+- [ ] **User Engagement**
+
+  - [ ] Add internal linking to related posts.
+  - [ ] Encourage comments and discussions.
+  - [ ] Use call-to-action (CTA) buttons effectively.
+  - [ ] Conduct regular surveys to understand user interests.
+
+### Monitoring and Analytics
+
+- [ ] **Analytics Integration**
+
+  - [ ] Set up Google Analytics to track user behavior.
+  - [ ] Implement Google Search Console for indexing and performance insights.
+  - [ ] Monitor key performance indicators (KPIs) regularly.
+
+- [ ] **Broken Link Check**
+
+  - [ ] Use tools to regularly check for and fix broken links.
+  - [x] Implement a 404 error page with useful navigation options.
+  - [x] Redirect broken links to relevant pages.
+
+### Advanced SEO Features
+
+- [ ] **Social Signals**
+
+  - [ ] Add social sharing buttons to posts.
+  - [ ] Encourage sharing through social media.
+  - [ ] Monitor social media engagement metrics.
+  - [ ] Create shareable content (e.g., infographics, quotes).
+
+### Accessibility
+
+- [x] **Semantic HTML**
+
+  - [x] Use semantic elements (like `<article>`, `<header>`, etc.) for better structure.
+  - [x] Ensure proper heading structure (H1, H2, H3).
+  - [x] Implement ARIA roles where necessary.
+
+- [ ] **Keyboard Navigation**
+
+  - [x] Ensure the site is navigable via keyboard for accessibility.
+  - [x] Test focus states for interactive elements.
+  - [ ] Provide skip links to improve navigation for screen reader users.
+
+### Legal and Compliance
+
+- [ ] **GDPR Compliance**
+
+  - [x] Include a privacy policy and cookie consent banner.
+  - [ ] Implement user data protection measures.
+  - [x] Allow users to request data deletion. (Available via dashboard)
+
+- [ ] **Accessibility Compliance**
+
+  - [ ] Ensure compliance with WCAG (Web Content Accessibility Guidelines).
+  - [ ] Conduct regular accessibility audits.
+  - [ ] Provide accessibility resources and contact information for support.
+
+### Additional SEO Features
+
+- [x] **User Experience (UX)**
+
+  - [x] Conduct user testing to identify pain points in navigation.
+  - [x] Analyze user behavior through heatmaps and session recordings.
+  - [x] Optimize layout and design for better user engagement.
+
+- [ ] **Voice Search Optimization**
+
+  - [ ] Optimize content for voice search queries (natural language, questions).
+  - [ ] Use structured data to enhance voice search results.
+  - [ ] Consider featured snippets and local search results for voice queries.
+
+- [ ] **Video SEO**
+
+  - [ ] Optimize video titles, descriptions, and tags for search.
+  - [ ] Create video sitemaps to index video content effectively.
+  - [ ] Use closed captions and transcripts for accessibility and SEO.
+
+- [ ] **Content Diversification**
+
+  - [ ] Explore various content formats (podcasts, webinars, etc.).
+  - [ ] Create interactive content (quizzes, polls) to boost engagement.
+  - [ ] Implement user-generated content strategies (reviews, testimonials).
+
+- [ ] **A/B Testing**
+
+  - [ ] Conduct A/B tests on landing pages to improve conversion rates.
+  - [ ] Test different headlines, images, and calls-to-action.
+  - [ ] Analyze results and make data-driven decisions for future optimizations.
+
+- [ ] **Competitor Analysis**
+
+  - [ ] Regularly analyze competitors’ SEO strategies and performance.
+  - [ ] Identify content gaps and opportunities in your niche.
+  - [ ] Monitor competitors’ backlink profiles for potential link-building opportunities.
+
+- [ ] **Link Building**
+
+  - [ ] Develop a strategy for acquiring high-quality backlinks.
+  - [ ] Conduct outreach to relevant sites for guest posting.
+  - [ ] Monitor backlinks regularly for quality and relevance.
+
+- [ ] **Content Strategy**
+
+  - [ ] Develop a content calendar to ensure consistent publishing.
+  - [ ] Focus on pillar content and topic clusters for better organization.
+  - [ ] Identify seasonal content opportunities to capitalize on trends.
+
+- [ ] **Regular Audits**
+
+  - [ ] Schedule regular SEO audits to identify areas for improvement.
+  - [ ] Analyze site health, performance, and compliance with best practices.
+  - [ ] Review content performance to make informed updates.
+
+- [ ] **User Feedback and Adaptation**
+
+  - [ ] Implement feedback loops to gather user insights and adjust strategies.
+  - [ ] Use surveys and polls to understand user preferences and content interests.
+
+### Advanced Features
+
+- [ ] Social Media Integration
+  - [ ] Social sharing buttons.
+  - [ ] Social media feeds or widgets.
+  - [ ] Auto-posting to social media platforms.
+- [ ] Monetization
+  - [ ] Ad placement and management.
+  - [ ] Affiliate links and product reviews.
+  - [ ] Subscription or membership models.
+  - [ ] E-commerce integration (for selling products or services).
+- [ ] Content Management
+  - [ ] Media library for managing images, videos, and files.
+  - [ ] Content import/export tools.
+  - [ ] WYSIWYG or markdown editor for content creation.
+  - [ ] Custom post types (e.g., events, reviews).
+- [ ] User Interaction
+
+  - [ ] Contact forms and feedback mechanisms.
+  - [ ] Quizzes, interactive infographics, surveys or polls
+  - [ ] Newsletter subscription.
+  - [ ] Users can bookmark or save posts for later reading
+
+- [ ] Security Features
+  - [ ] SSL/TLS encryption.
+  - [ ] Two-factor authentication.
+  - [ ] Backup blog content and settings.
+  - [ ] User activity logs.
+- [ ] Performance Optimization
+  - [ ] Caching mechanisms.
+  - [ ] Content Delivery Network (CDN) integration.
+  - [ ] Lazy loading for images and videos.
+- [ ] Accessibility Features
+  - [ ] Alt text for images.
+  - [ ] Keyboard navigation support.
+  - [ ] Screen reader compatibility.
+- [ ] Localization and Internationalization
+  - [x] Multi-language support.
+  - [ ] Regional settings (date formats, currency).
+  - [ ] Auto-translate or integrate with translation services like Google Translate.
+- [ ] Notifications
+  - [ ] Email notifications for new posts or comments.
+  - [ ] Push notifications for updates.
+- [ ] Legal and Compliance
+  - [ ] Privacy policy and terms of service.
+  - [ ] GDPR compliance features.
+  - [x] Cookie consent.
+  - [ ] Analytics and Reporting
+  - [ ] Track page views, post views, and user engagement
+
+## Admin Features
+
+- [ ] Dashboard
+  - [ ] Overview of post statistics, comments, and user activity
+- [ ] User Roles and Permissions
+  - [ ] Manage user roles and permissions
+- [ ] Content Moderation
+  - [ ] Review and manage content before publication
+- [ ] Customizable Themes
+  - [ ] Choose or customize blog themes and layouts
+- [ ] Advanced Comment Management
+  - [ ] Comment moderation queue
+  - [ ] Spam filtering
+
+### Community Features
+
+- [ ] User-generated Content
+  - [ ] Guest posts.
+  - [x] User profiles with bios and links.
+- [ ] Forums or Discussion Boards
+  - [ ] Threads and topics for community discussions.
+  - [ ] User reputation or ranking system.
+
+
+
+- **[Mono repo]** - 
+- **[Multi-Framework]** - vue, react
+- ⚡️ **[Fast][Vite]** - instant reloading powered by [Vite]
+
+
 ## Project Setup
 
 
@@ -303,36 +737,7 @@ contentful
 
 
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 
 
@@ -735,3 +1140,96 @@ filteredProperties = filteredProperties.slice(offset, offset + limit)
 </div>
 
 ```
+
+
+
+## t3 stack Jamstack
+
+sentry
+google analytics
+posthog
+datadog
+upstash
+
+Dockerfile
+.dockerignore
+Build Docker image
+Run Docker container
+```bash
+docker build -t opus/portfolio:latest .
+kubectl apply -f protfolio.yaml
+kubectl get pods
+kubectl get services
+```
+
+clusterIP - inside cluster
+NodePort - use for dev
+LoadBalancer - external use
+ExternalName - redirects to CNAME
+
+
+
+
+brute force attack
+
+query executor
+query builder
+raw query template
+```ts
+const result = await prisma.$queryRaw`SELECT * FROM User`;
+```
+
+
+```ts
+await db.execute(sql`select * from ${usersTable} where ${usersTable.id} = ${id}`)
+```
+
+
+
+ryan dahl
+
+
+Serverless Data Platform upstash
+
+
+
+## oauth flow
+
+hit the authorize endpoint with credentials
+
+
+
+pnpm create vite theme --template react-ts
+
+font icon
+web component  as icon
+svg icon loader
+virtual module
+svg compomnent
+
+web component essential
+
+
+
+
+Composable components for building forms.
+A `<FormField />` component for building controlled form fields.
+
+
+
+[postgres error code](https://www.postgresql.org/docs/current/errcodes-appendix.html)
+
+
+## analytics
+
+
+[plausible](https://plausible.io/)
+
+[sentry]()
+
+[posthog]()
+
+[datadog]()
+
+[onedollarstat]()
+
